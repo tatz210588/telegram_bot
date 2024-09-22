@@ -1,0 +1,40 @@
+{
+    
+        "python.pipenvPath": "<your-env-path>",   // if using pipenv
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "autopep8.path": ["<your-env-path>/bin/autopep8"],
+        "autopep8.args": [
+          "--max-line-length",
+          "70",
+          "--aggressive",
+        ],
+        "autopep8.importStrategy": "fromEnvironment",
+        // if using pylint
+        "pylint.path": "<your-env-path>/bin/pylint",
+        "pylint.args": [
+          "--load-plugins",
+          "pylint_django", // only if you are using django framework
+          "--enable=W0614",
+          "--enable= W0611"
+        ],
+        "pylint.importStrategy": "fromEnvironment",
+        // if using flake8 (uncomment below lines and comment above block of settings of pylint
+        // "flake8.path": ["<your-env-path>/bin/flake8"],
+        // "flake8.args": [
+        //   "--max-line-length=130"
+        // ],
+        // "flake8.importStrategy": "fromEnvironment",
+        // to enable sort imports on save
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "always"
+        },
+        // to add environment vars while opening a new vscode terminal (name:val)
+        "terminal.integrated.env.linux": {
+          "DJANGO_ENV": "DEV"
+        },
+        "[python]": {
+          "editor.tabSize": 4
+        },
+      
+}
